@@ -67,7 +67,7 @@ while True:
  
 	print "accelerometru_xout: ", ("%6d" % acceleration_xout), " scalat: ", acceleration_xout_scaled
 	print "accelerometru_yout: ", ("%6d" % acceleration_yout), " scalat: ", acceleration_yout_scaled
-	print "accelerometru_zout: ", ("%6d" % beschleunigung_zout), " scalat: ", acceleration_zout_scaled
+	print "accelerometru_zout: ", ("%6d" % acceleration_zout), " scalat: ", acceleration_zout_scaled
  
 	print "X Rotation: " , get_x_rotation(acceleration_xout_scaled, acceleration_yout_scaled, acceleration_zout_scaled)
 	print "Y Rotation: " , get_y_rotation(acceleration_xout_scaled, acceleration_yout_scaled, acceleration_zout_scaled)
