@@ -1,32 +1,34 @@
 import smtplib
 from datetime import datetime
 
-smtpUser='test.gyro.sm@gmail.com'
-smtpPass='testac123'
+def sendMail():
 
-toAdd='test.gyro.sm@gmail.com'
-fromAdd=smtpUser
+  smtpUser='test.gyro.sm@gmail.com'
+  smtpPass='testac123'
 
-now = datetime.now()
-dt_string = now.strftime("%d-%b-%Y (%H:%M:%S)")
-#print dt_string
+  toAdd='test.gyro.sm@gmail.com'
+  fromAdd=smtpUser
 
-msg="The alarm on your motorcycle has been activated at "
+  now = datetime.now()
+  dt_string = now.strftime("%d-%b-%Y (%H:%M:%S)")
+  #print dt_string
 
-subject= msg + dt_string
+  msg="The alarm on your motorcycle has been activated at "
 
-header='To: ' + toAdd + '\n' + 'From: ' + fromAdd + '\n' + 'Subject: ' + subject
+  subject= msg + dt_string
 
-body= ' From within a Python script'
+  header='To: ' + toAdd + '\n' + 'From: ' + fromAdd + '\n' + 'Subject: ' + subject
 
-print header + '\n' + body
+  body= ' From within a Python script'
 
-server=smtplib.SMTP('smtp.gmail.com', 587)
+  print header + '\n' + body
 
-server.ehlo()
-server.starttls()
-server.ehlo()
+  server=smtplib.SMTP('smtp.gmail.com', 587)
 
-server.login(smtpUser,smtpPass)
-server.sendmail(fromAdd,toAdd, header + '\n' + body)
-server.quit()
+  server.ehlo()
+  server.starttls()
+  server.ehlo()
+
+  server.login(smtpUser,smtpPass)
+  server.sendmail(fromAdd,toAdd, header + '\n' + body)
+  server.quit()
